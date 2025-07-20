@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>United Garba - Ticket Registration</title>
+
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/templatemo-festava-live.css" rel="stylesheet">
+</head>
+
+<body>
+<main>
+  <header class="site-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex flex-wrap">
+          <p class="d-flex me-4 mb-0">
+            <i class="bi-person custom-icon me-2"></i>
+            <strong class="text-dark">Registraion for United Garba Season-4</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">DDB Events</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+          <li class="nav-item"><a class="nav-link click-scroll" href="index.html#section_1">Home</a></li>
+          <li class="nav-item"><a class="nav-link click-scroll" href="index.html#section_2">About United Garba</a></li>
+          <li class="nav-item"><a class="nav-link click-scroll" href="index.html#section_3">Previou Seasons</a></li>
+          <li class="nav-item"><a class="nav-link click-scroll" href="index.html#section_4">Ticket Prices</a></li>
+          <li class="nav-item"><a class="nav-link click-scroll" href="index.html#section_6">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="ticket-section section-padding">
+    <div class="section-overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-12 mx-auto">
+          <form class="custom-form ticket-form mb-5" method="post" enctype="multipart/form-data">
+            <h2 class="text-center mb-4">Get started here</h2>
+            <div class="ticket-form-body">
+              <input type="text" name="fullName" class="form-control mb-3" placeholder="Full Name" required>
+
+              <div class="mb-3">
+                <label class="form-label d-block">Gender</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
+                  <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                  <label class="form-check-label" for="female">Female</label>
+                </div>
+              </div>
+
+              <input type="email" name="email" class="form-control mb-3" placeholder="Email ID" required>
+              <input type="tel" name="phone" class="form-control mb-3" placeholder="Phone Number" pattern="^[0-9]{10}$" required>
+              <textarea name="address" class="form-control mb-3" rows="2" placeholder="Address" required></textarea>
+
+              <label class="form-label">Upload your photo</label>
+              <input type="file" name="userPhoto" class="form-control mb-3" accept="image/*" required>
+
+              <label class="form-label">Which ticket would you like to purchase?</label>
+              <select name="ticketType" id="ticketType" class="form-control mb-3" onchange="toggleSpouseSection(this)" required>
+                <option value="">-- Select --</option>
+                <option value="couple">👫 Couple – ₹799 (Early Bird)</option>
+                <option value="single">🤍 Single – ₹499 (Early Bird)</option>
+                <option value="per_day">🗕 Single – ₹149 (Per Day)</option>
+              </select>
+
+              <div id="spouseSection" style="display: none;">
+                <input type="text" name="spouseName" class="form-control mb-3" placeholder="Spouse Full Name">
+                <label class="form-label">Upload Spouse Photo</label>
+                <input type="file" name="spousePhoto" class="form-control mb-3" accept="image/*">
+                <input type="text" name="childrenDetails" class="form-control mb-3" placeholder="Children attending? Mention number and age(s), or type 'No'">
+              </div>
+
+                <!-- Garba Training Classes -->
+                <div class="mb-4">
+                <label class="form-label d-block mb-2 fw-bold">Are you interested in Garba training classes?</label>
+                <div class="d-flex gap-4">
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="garbaTraining" id="garbaYes" value="Yes" required>
+                    <label class="form-check-label" for="garbaYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="garbaTraining" id="garbaNo" value="No">
+                    <label class="form-check-label" for="garbaNo">No</label>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Early Bird Offer -->
+                <div class="mb-4">
+                <label class="form-label d-block mb-2 fw-bold">Do you want to avail the Early Bird Offer?</label>
+                <div class="d-flex gap-4">
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="earlyBird" id="earlyYes" value="Yes" required>
+                    <label class="form-check-label" for="earlyYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="earlyBird" id="earlyNo" value="No">
+                    <label class="form-check-label" for="earlyNo">No</label>
+                    </div>
+                </div>
+                </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" name="terms" id="terms" required>
+                <label class="form-check-label" for="terms">I accept the Terms & Conditions and Participant Declaration</label>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit Registration</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleSpouseSection(select) {
+      const spouseSection = document.getElementById('spouseSection');
+      spouseSection.style.display = select.value === 'couple' ? 'block' : 'none';
+    }
+  </script>
+</main>
+
+<!-- Registration Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title" id="successModalLabel">🎉 Registration Successful</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Thank you for registering for United Garba Season-4!
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS FILES -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/alert.js"></script>
+
+<!-- Loader Overlay -->
+<div id="loaderOverlay" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+">
+  <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+
+</body>
+</html>
