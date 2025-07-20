@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch("https://script.google.com/macros/s/AKfycbwyUqKiwn6OT6IP7KEQwZVkzAD3ITolm5GiwdcVhjy_cj_0Z0pwNDr4xb74M47iudmtvw/exec", {
         method: "POST",
         //mode: "cors", // Ensure CORS is enabled for production
-        //mode: "no-cors", // 🚨 Needed for local testing
+        mode: "no-cors", // 🚨 Needed for local testing
         body: JSON.stringify(payload),
         headers: {
           "Content-Type": "application/json",
